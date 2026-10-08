@@ -44,6 +44,19 @@ public class Tienda {
             }else  return "El cliente no se puede registrar, su información es igual a uno ya registrado";
 
         }
+        public ArrayList<Cliente> consultarFechaClientes(List <Factura>listaFacturas){
+        ArrayList<Cliente> listaClientes= new ArrayList<>();
+        LocalDate fechaConsulta= LocalDate.of(2026,10,7);
+
+        for(Factura factura: listaFacturas){
+            if (factura.fechaGeneracion().isEqual(fechaConsulta)){
+                listaClientes.add(factura.cliente());
+
+            }
+        }
+        return listaClientes;
+
+        }
         public List<Factura> consultarFactura(String documentoIdentidad){
         List<Factura> facturasDelCliente= new ArrayList<>();
         for (Factura factura: listaFacturas){
@@ -62,7 +75,7 @@ public class Tienda {
                 }
             return productosAdecuado;
             }
-         public ArrayList<String>obtenerEntre10Y50(int limiteInferior, int limiteSuperior){
+         public ArrayList<String>obtenerEntre10Y50(){
            ArrayList<String> resultado= new ArrayList<>();
            for(String codigo: hashMaplistaProductos.keySet()){
                Producto producto= hashMaplistaProductos.get(codigo);
