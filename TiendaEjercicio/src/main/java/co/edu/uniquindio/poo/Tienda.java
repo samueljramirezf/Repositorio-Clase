@@ -10,7 +10,7 @@ public class Tienda {
 
     private final ArrayList<Cliente> listaClientes = new ArrayList<>();
     private final List<Factura> listaFacturas= new LinkedList<>();
-    private Map<String, Producto> listaProductos= new HashMap<>();
+    private Map<String, Producto> hashMaplistaProductos = new HashMap<>();
 
     public Tienda(String Nombre, String Nit, String Telefono) {
         this.Nombre = Nombre;
@@ -55,13 +55,24 @@ public class Tienda {
         }
         public List<Producto>obtenerMayoresDiez() {
             List<Producto> productosAdecuado = new ArrayList<>();
-            for (Producto productosBuenos : listaProductos.values()) {
+            for (Producto productosBuenos : hashMaplistaProductos.values()) {
                 if (productosBuenos.getCantidadDisponible()>=10) {
                     productosAdecuado.add(productosBuenos);
-                }
+                    }
                 }
             return productosAdecuado;
             }
+         public ArrayList<String>obtenerEntre10Y50(int limiteInferior, int limiteSuperior){
+           ArrayList<String> resultado= new ArrayList<>();
+           for(String codigo: hashMaplistaProductos.keySet()){
+               Producto producto= hashMaplistaProductos.get(codigo);
+               if(producto.getCantidadDisponible()>=10 && producto.getCantidadDisponible()<50){
+                   resultado.add (codigo);
+               }
+
+           }
+             return resultado;
+         }
     public String getNombre() {
         return Nombre;
     }
@@ -86,12 +97,12 @@ public class Tienda {
         return listaFacturas;
     }
 
-    public Map<String, Producto> getListaProductos() {
-        return listaProductos;
+    public Map<String, Producto> getHashMaplistaProductos() {
+        return hashMaplistaProductos;
     }
 
-    public void setListaProductos(Map<String, Producto> listaProductos) {
-        this.listaProductos = listaProductos;
+    public void setHashMaplistaProductos(Map<String, Producto> hashMaplistaProductos) {
+        this.hashMaplistaProductos = hashMaplistaProductos;
     }
 
 }
