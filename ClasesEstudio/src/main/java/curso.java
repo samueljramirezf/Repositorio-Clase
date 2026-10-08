@@ -1,0 +1,2 @@
+public class curso {
+}
