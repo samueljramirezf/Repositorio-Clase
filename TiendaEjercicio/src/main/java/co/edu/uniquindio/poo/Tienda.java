@@ -55,8 +55,18 @@ public class Tienda {
             }
         }
         return listaClientes;
-
         }
+
+    public ArrayList<Factura> consultarfacturasDeClientesConR(String nombreCompleto) {
+        ArrayList<Factura> listaClientes = new ArrayList<>();
+        for (Factura factura : listaFacturas) {
+            if (factura.tieneClienteConR()) {
+               listaClientes.add (factura);
+            }
+        }
+        return listaClientes;
+    }
+
         public List<Factura> consultarFactura(String documentoIdentidad){
         List<Factura> facturasDelCliente= new ArrayList<>();
         for (Factura factura: listaFacturas){

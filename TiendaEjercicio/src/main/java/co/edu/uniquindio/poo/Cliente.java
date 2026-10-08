@@ -52,4 +52,7 @@ public class Cliente {
     public List<Factura> getListaFacturas() {
         return Collections.unmodifiableList (listaFacturas);
     }
+    public boolean verificarNombreConR() {
+        return nombreCompleto.startsWith("R");
+    }
 }

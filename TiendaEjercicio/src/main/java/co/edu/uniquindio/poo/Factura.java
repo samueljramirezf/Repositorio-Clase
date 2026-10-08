@@ -16,4 +16,10 @@ public record Factura(String codigo, LocalDate fechaGeneracion, double total,
 
         return total;
     }
+    public boolean tieneClienteConR() {
+
+        boolean resultado = false;
+        resultado = cliente.verificarNombreConR();
+        return resultado;
+    }
 }
