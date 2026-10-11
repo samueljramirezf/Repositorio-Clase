@@ -106,7 +106,25 @@ public class Tienda {
                 }
                  return facturasAdecuadas;
              }
-
+             public ArrayList<Producto>productosEspecificos(Categoria categoria0){
+                ArrayList<Producto>productosPertenecientes= new ArrayList<>();
+                for(Producto productos: hashMaplistaProductos.values()){
+                    if(productos.getCategoria().equals(categoria0)){
+                        productosPertenecientes.add(productos);
+                    }
+                }
+                return productosPertenecientes;
+             }
+            public ArrayList<Producto>productosRangoPrecio(int minimo, int maximo){
+            ArrayList<Producto>productosPrecioAcorde= new ArrayList<>();
+            for(Producto productos: hashMaplistaProductos.values()){
+                if(productos.getPrecio()>= minimo && productos.getPrecio()<=maximo ){
+                }
+                productosPrecioAcorde.add(productos);
+            }
+            return  productosPrecioAcorde;
+            }
+            
     public String getNombre() {
         return Nombre;
     }
