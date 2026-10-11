@@ -96,6 +96,17 @@ public class Tienda {
            }
              return resultado;
          }
+
+         public ArrayList<Factura>obtenerFacturasIphone16ProMax() {
+             ArrayList<Factura> facturasAdecuadas = new ArrayList<>();
+             for (Factura factura: listaFacturas){
+                if(factura.tieneElCelular()) {
+                    listaFacturas.add(factura);
+                }
+                }
+                 return facturasAdecuadas;
+             }
+
     public String getNombre() {
         return Nombre;
     }

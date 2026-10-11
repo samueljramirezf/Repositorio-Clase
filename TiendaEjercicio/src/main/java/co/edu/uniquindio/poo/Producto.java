@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo;
 
+import java.util.ArrayList;
+
 public class Producto {
     private final String codigo;
     private final String nombre;
@@ -45,5 +47,8 @@ public class Producto {
 
     public Tienda getOwnedByTienda() {
         return ownedByTienda;
+    }
+    boolean nombresVerificados(){
+        return  nombre.equalsFoldCase("Iphone 16 Pro Max");
     }
 }

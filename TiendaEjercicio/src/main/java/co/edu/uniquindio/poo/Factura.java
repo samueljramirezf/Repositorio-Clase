@@ -22,4 +22,16 @@ public record Factura(String codigo, LocalDate fechaGeneracion, double total,
         resultado = cliente.verificarNombreConR();
         return resultado;
     }
+
+    public boolean tieneElCelular() {
+       boolean resultado= false;
+        for (DetalleFactura detalle:listaDetallesFactura){
+            Producto celular= detalle.getProducto();
+          if(celular.nombresVerificados()){
+              return true;
+          }
+        }
+        return resultado;
+        }
+
 }

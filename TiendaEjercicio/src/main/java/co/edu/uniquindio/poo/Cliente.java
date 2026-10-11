@@ -54,5 +54,6 @@ public class Cliente {
     }
     public boolean verificarNombreConR() {
         return nombreCompleto.startsWith("R");
+
     }
 }

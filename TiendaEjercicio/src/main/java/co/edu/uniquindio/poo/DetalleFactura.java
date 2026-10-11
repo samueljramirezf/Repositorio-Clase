@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo;
 
+import java.util.ArrayList;
+
 public class DetalleFactura {
     private final int cantidadComprada;
     private final float subTotal;
@@ -29,6 +31,5 @@ public class DetalleFactura {
     public Factura getOwnedByFactura() {
         return ownedByFactura;
     }
-
 
 }
