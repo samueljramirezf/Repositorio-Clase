@@ -115,7 +115,7 @@ public class Tienda {
              ArrayList<Factura> facturasAdecuadas = new ArrayList<>();
              for (Factura factura: listaFacturas){
                 if(factura.tieneElCelular()) {
-                    listaFacturas.add(factura);
+                    facturasAdecuadas.add(factura);
                 }
                 }
                  return facturasAdecuadas;
@@ -154,6 +154,15 @@ public class Tienda {
                 }
             }
             return ciudadanos;
+            }
+            public ArrayList<Factura>facturaEspecial(){
+            ArrayList<Factura>facturasUnicas= new ArrayList<>();
+            for( Factura facturas: listaFacturas){
+                if(facturas.tieneElCelular() && facturas.cliente().getNombreCompleto().equalsIgnoreCase("juan")){
+                    facturasUnicas.add(facturas);
+                }
+            }
+            return facturasUnicas;
             }
 
     public String getNombre() {
