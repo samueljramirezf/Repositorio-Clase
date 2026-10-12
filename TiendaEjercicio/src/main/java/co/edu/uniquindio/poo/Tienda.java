@@ -49,8 +49,6 @@ public class Tienda {
         }
         return Optional.of(productoMayor);
         }
-
-
         public String registrarCliente(Cliente cliente){
            Optional<Cliente>clienteEncontrado= buscarCliente(cliente.getDocumentoIdentidad());
             if (clienteEncontrado.isEmpty()){
@@ -147,6 +145,15 @@ public class Tienda {
                 }
                 productosOrdenados.sort(Comparator.comparing(Producto::getPrecio));
                 return productosOrdenados;
+            }
+            public ArrayList<Cliente>clientesNativos(String ciudadResidencia){
+            ArrayList<Cliente>ciudadanos= new ArrayList<>();
+            for(Cliente clientes: listaClientes){
+                if(clientes.getCiudadResidencia().equalsIgnoreCase(ciudadResidencia)){
+                    ciudadanos.add(clientes);
+                }
+            }
+            return ciudadanos;
             }
 
     public String getNombre() {
