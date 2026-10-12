@@ -35,6 +35,22 @@ public class Tienda {
         }
         return Optional.empty();
        }
+       public Optional<Producto>identificarMayor(Producto productoMayor) {
+        if(hashMaplistaProductos.isEmpty()) {
+            return Optional.empty();
+        }
+        productoMayor= null;
+        for(Producto producto: hashMaplistaProductos.values()){
+            if(productoMayor==null){
+                productoMayor=producto;
+                }else if(producto.getPrecio()>productoMayor.getPrecio()){
+                    productoMayor=producto;
+            }
+        }
+        return Optional.of(productoMayor);
+        }
+
+
         public String registrarCliente(Cliente cliente){
            Optional<Cliente>clienteEncontrado= buscarCliente(cliente.getDocumentoIdentidad());
             if (clienteEncontrado.isEmpty()){
@@ -132,6 +148,7 @@ public class Tienda {
                 productosOrdenados.sort(Comparator.comparing(Producto::getPrecio));
                 return productosOrdenados;
             }
+
     public String getNombre() {
         return Nombre;
     }
