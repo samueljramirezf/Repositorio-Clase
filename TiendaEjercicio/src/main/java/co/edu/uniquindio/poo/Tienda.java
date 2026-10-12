@@ -124,7 +124,14 @@ public class Tienda {
             }
             return  productosPrecioAcorde;
             }
-            
+            public ArrayList<Producto>productosDemenorAMayor(){
+                ArrayList<Producto>productosOrdenados= new ArrayList<>();
+                for(Producto productos: hashMaplistaProductos.values()){
+                    productosOrdenados.addAll(hashMaplistaProductos.values());
+                }
+                productosOrdenados.sort(Comparator.comparing(Producto::getPrecio));
+                return productosOrdenados;
+            }
     public String getNombre() {
         return Nombre;
     }
