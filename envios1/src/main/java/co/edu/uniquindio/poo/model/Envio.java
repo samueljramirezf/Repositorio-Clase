@@ -2,7 +2,6 @@ package co.edu.uniquindio.poo.model;
 
 public abstract class Envio {
 
-
     private String codigo;
     protected float peso;
     private float incremento;
@@ -10,12 +9,13 @@ public abstract class Envio {
     private String destinatario;
     private EmpresaEnvios ownedByEmpresa;
 
-    public Envio(float valorFijo,String codigo, float peso,float incremento, String destinatario) {
+    public Envio(float valorFijo, String codigo, float peso, float incremento, String destinatario, EmpresaEnvios ownedByEmpresa) {
         this.codigo = codigo;
         this.peso = peso;
         this.destinatario = destinatario;
         this.incremento = incremento;
         this.valorFijo = valorFijo;
+        this.ownedByEmpresa = ownedByEmpresa;
 
     }
 
@@ -62,7 +62,6 @@ public abstract class Envio {
     public double calcularCostoFijo(){
         return valorFijo + peso * incremento;
     }
-
 
     public abstract double calcularCostoTotal();
 }
