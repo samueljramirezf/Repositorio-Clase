@@ -5,7 +5,7 @@ public class EnvioExpress extends EnvioNacional {
 
     public EnvioExpress(float valorFijo, String codigo, float peso, float incremento, String destinatario, EmpresaEnvios empresaEnvios, String ciudadDestino, boolean domicilio, int horasMaximas) {
         super(valorFijo, codigo, peso, incremento, destinatario, empresaEnvios, ciudadDestino, domicilio);
-        this.horasMaximas= horasMaximas;
+        this.horasMaximas = horasMaximas;
     }
 
     public int getHorasMaximas() {
@@ -17,13 +17,10 @@ public class EnvioExpress extends EnvioNacional {
     }
 
     public double calcularCostoNuevo() {
-        return calcularCostoFijo() * 1.3;
-    }
-
-    public double agregarCincomil() {
+        double costo = calcularCostoTotal() * 1.3;
         if (horasMaximas <= 24) {
-            return calcularCostoNuevo() + 5000;
+            return costo + 5000;
         }
-        return calcularCostoNuevo();
+        return costo;
     }
 }
