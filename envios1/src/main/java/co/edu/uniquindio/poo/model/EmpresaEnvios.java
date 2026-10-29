@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -41,7 +42,7 @@ public class EmpresaEnvios {
         }
     }
 
-    private Optional<Envio> buscarEnvio(String codigo) {
+    public Optional<Envio> buscarEnvio(String codigo) {
         return listaEnvios.
                 stream().
                 filter(e -> e.getCodigo().equals(codigo)).findFirst();
@@ -65,4 +66,19 @@ public class EmpresaEnvios {
         }
         return envioMayor;
     }
+    public List<Envio>obtenerEnviosMayores(int pesoLimite){
+        List<Envio> enviosMayores= new ArrayList<>();
+        for(Envio envioAux: listaEnvios){
+            if(envioAux.getPeso()>pesoLimite){
+                enviosMayores.add(envioAux);
+            }
+
+        }
+        return enviosMayores;
+    }
+    public List<Envio>obtenerEnviosMayoresDeclarativo(int pesoLimite){
+
+        return listaEnvios.stream().filter(envio -> envio.getPeso()>= pesoLimite).toList();
+    }
+
 }

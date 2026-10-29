@@ -26,9 +26,9 @@ public class Main {
         do{
             String entrada = JOptionPane.showInputDialog(null, menu, "Menú principal", JOptionPane.QUESTION_MESSAGE);
             switch(opcion){
-                case 1:
+                case 1:registrarEnvio();
                     break;
-                case 2:
+                case 2:calcularCosto();
                     break;
                 case 3:
                     break;
@@ -44,5 +44,10 @@ public class Main {
 
         }while (opcion!=0);
     }
+static void registrarEnvio(){
 
+}
+static void calcularCosto(){
+
+}
 }
