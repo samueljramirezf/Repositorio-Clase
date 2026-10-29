@@ -30,7 +30,7 @@ public class App extends Application {
         inicializarData();
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("primary.fxml"));
+            loader.setLocation(App.class.getResource("co/edu/uniquindio/poo/empresajfx/primary.fxml"));
             javafx.scene.layout.VBox rootLayout = (javafx.scene.layout.VBox) loader.load();
             PrimaryController primaryController = loader.getController();
             primaryController.setApp(this);
