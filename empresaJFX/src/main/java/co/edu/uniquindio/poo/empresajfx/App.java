@@ -10,6 +10,7 @@ import co.edu.uniquindio.poo.empresajfx.model.Cliente;
 import co.edu.uniquindio.poo.empresajfx.model.Empresa;
 import co.edu.uniquindio.poo.empresajfx.viewController.ClienteViewController;
 import co.edu.uniquindio.poo.empresajfx.viewController.PrimaryController;
+import co.edu.uniquindio.poo.empresajfx.viewController.ProductoViewController;
 
 /**
  * JavaFX App
@@ -55,6 +56,23 @@ public class App extends Application {
             AnchorPane rootLayout = (AnchorPane) loader.load();
             ClienteViewController clienteViewController = loader.getController();
             clienteViewController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void openCrudProducto() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudProducto.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ProductoViewController productoViewController = loader.getController();
+            productoViewController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
